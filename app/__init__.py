@@ -1,13 +1,12 @@
 import logging
-from logging.handlers import SMTPHandler
+from logging.handlers import SMTPHandler, RotatingFileHandler
+import os
 
 from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
-
-# i cannot see that in debug1 branch
 
 
 app = Flask(__name__)
@@ -18,6 +17,12 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 
+# way to set the environment var
+# export MAIL_SERVER=smtp.googlemail.com
+# export MAIL_PORT=587
+# export MAIL_USE_TLS=1
+# export MAIL_USERNAME=<your-gmail-username>
+# export MAIL_PASSWORD=<your-gmail-password>
 if not app.debug:
 	if app.config['MAIL_SERVER']:
 		auth = None
@@ -27,7 +32,7 @@ if not app.debug:
 		if app.config['MAIL_USE_TLS']:
 			secure = ()
 		mail_handler = SMTPHandler(
-			mailhost = (app.config('MAIL_SERVER'), app.config('MAIL_PORT')),
+			mailhost = (app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
 			fromaddr = 'no-reply@' + app.config['MAIL_SERVER'],
 			toaddrs = app.config['ADMINS'],
 			subject = 'Microblog Failure',
@@ -36,6 +41,16 @@ if not app.debug:
 		)
 		mail_handler.setLevel(logging.ERROR)
 		app.logger.addHandler(mail_handler)
+
+	if not os.path.exists('logs'):
+		os.mkdir('logs')
+	file_handler = RotatingFileHandler('logs/microblog.log', maxBytes=10240, backupCount=10)
+	file_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+	file_handler.setLevel(logging.INFO)
+	app.logger.addHandler(file_handler)
+
+	app.logger.setLevel(logging.INFO)
+	app.logger.info('Microblog startup')
 
 # putting one of the reciprocal imports at the bottom avoids the error that results from the mutual references between these two files.
 from app import routes, models, errors
