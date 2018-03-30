@@ -7,6 +7,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 
+# i cannot see that in debug1 branch
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
