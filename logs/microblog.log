@@ -1,8 +1,39 @@
-2018-03-29 22:09:17,400 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 14:40:34,698 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 14:40:46,094 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 15:42:15,933 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 15:47:38,978 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 15:49:34,890 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 16:04:06,660 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 16:05:03,891 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
+2018-04-01 15:37:37,866 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/jizhoutang/microBlog/app/routes.py", line 22, in index
+    return render_template('index.html', title='Home Page',form=form, posts=posts)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/jizhoutang/microBlog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 33, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/jizhoutang/microBlog/app/templates/index.html", line 18, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2018-04-01 15:40:20,773 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
+2018-04-01 15:58:03,431 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]

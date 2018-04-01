@@ -9,6 +9,7 @@
 	<body>
 		<div>Microblog: 
 			<a href="{{ url_for('index') }}">Home</a>
+			<a href="{{ url_for('explore') }}">Explore</a>
 			<!-- flask_login add current_user to template jinja -->
 			{% if current_user.is_anonymous %}
 			<a href="{{ url_for('login') }}">Login</a>
