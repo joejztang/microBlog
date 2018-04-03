@@ -51,3 +51,10 @@
 		{% block app_content %}{% endblock %}
 	</div>
 {% endblock %}
+
+{% block scripts %}
+<!-- define a block in your template without using super(), 
+then any content defined for this block in the base template will be lost. -->
+    {{ super() }}
+    {{ moment.include_moment() }}
+{% endblock %}

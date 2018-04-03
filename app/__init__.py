@@ -9,6 +9,7 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
 
 
 app = Flask(__name__)
@@ -56,6 +57,7 @@ if not app.debug:
 	app.logger.info('Microblog startup')
 
 bootstrap = Bootstrap(app)
+moment = Moment(app)
 
 # putting one of the reciprocal imports at the bottom avoids the error that results from the mutual references between these two files.
 from app import routes, models, errors
