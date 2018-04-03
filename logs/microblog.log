@@ -45,3 +45,55 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password' w
 2018-04-03 11:44:07,963 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:55]
 2018-04-03 12:09:37,291 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:56]
 2018-04-03 12:29:58,109 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:56]
+2018-04-03 13:49:42,393 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:56]
+2018-04-03 13:59:15,216 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:56]
+2018-04-03 13:59:18,978 ERROR: Exception on /login [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jizhoutang/microBlog/app/routes.py", line 49, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/jizhoutang/microBlog/app/templates/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 51, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/Users/jizhoutang/microBlog/app/templates/login.html", line 7, in block "app_content"
+    {{ wtf.quick_form(form) }}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'wtf' is undefined
+2018-04-03 14:01:43,554 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:56]
+2018-04-03 14:05:06,441 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:56]
+2018-04-03 14:09:14,307 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:56]
