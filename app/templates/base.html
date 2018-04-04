@@ -57,4 +57,5 @@
 then any content defined for this block in the base template will be lost. -->
     {{ super() }}
     {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
 {% endblock %}
