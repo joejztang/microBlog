@@ -18,4 +18,4 @@ class Config(object):
 
 	POSTS_PER_PAGE = 3
 
-	LANGUAGES=['en', 'zh']
+	LANGUAGES=['en', 'zh_CN']

@@ -64,7 +64,7 @@ babel = Babel(app)
 @babel.localeselector
 def get_locale():
 	# return request.accept_languages.best_match(app.config['LANGUAGES'])
-	return 'zh'
+	return 'zh_CN'
 
 # putting one of the reciprocal imports at the bottom avoids the error that results from the mutual references between these two files.
 from app import routes, models, errors

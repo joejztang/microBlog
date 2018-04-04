@@ -57,4 +57,12 @@
 then any content defined for this block in the base template will be lost. -->
     {{ super() }}
     {{ moment.include_moment() }}
+    <!-- moment use 'zh-cn', probably 'zh-tw' for traditional character, by quick swithcing to "es", you can see it works -->
+    {% if g.locale == "zh_Hans_CN" %}
+        {{ moment.lang("zh-cn") }}
+    {% elif g.locale == "zh_Hans_TW" %}
+        {{ moment.lang("zh-tw") }}
+    {% else %}
+        {{ moment.lang(g.locale) }}
+    {% endif %}
 {% endblock %}

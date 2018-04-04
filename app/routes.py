@@ -6,7 +6,9 @@ from app.models import User, Post
 from werkzeug.urls import url_parse
 from datetime import datetime
 from app.email import send_password_reset_email
-from flask_babel import _
+from flask_babel import _, get_locale
+from flask import g
+import sys
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
@@ -85,6 +87,9 @@ def before_request():
 	if current_user.is_authenticated:
 		current_user.last_seen = datetime.utcnow()
 		db.session.commit()
+	g.locale = str(get_locale())
+	# sys.stderr.write(g.locale+'\n')
+
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
