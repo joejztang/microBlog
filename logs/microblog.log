@@ -109,3 +109,7 @@ jinja2.exceptions.UndefinedError: 'wtf' is undefined
 2018-04-03 22:33:40,109 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
 2018-04-03 22:33:53,570 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
 2018-04-03 22:34:06,768 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 09:33:29,597 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 09:33:42,196 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 10:35:31,882 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 11:24:44,431 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
