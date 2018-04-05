@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-04-04 16:37-0700\n"
+"POT-Creation-Date: 2018-04-05 10:47-0700\n"
 "PO-Revision-Date: 2018-04-03 16:35-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -20,93 +20,109 @@ msgstr ""
 
 #: app/forms.py:10 app/forms.py:16 app/forms.py:33
 msgid "Username"
-msgstr "用户名"
+msgstr ""
 
 #: app/forms.py:11 app/forms.py:18 app/forms.py:57
 msgid "Password"
-msgstr "密码"
+msgstr ""
 
 #: app/forms.py:12
 msgid "Remember me"
-msgstr "记住我"
+msgstr ""
 
 #: app/forms.py:13
 msgid "Sign In"
-msgstr "登录"
+msgstr ""
 
 #: app/forms.py:17 app/forms.py:53
 msgid "Email"
-msgstr "电子邮箱"
+msgstr ""
 
 #: app/forms.py:19 app/forms.py:58
 msgid "Repeat Password"
-msgstr "重复密码"
+msgstr ""
 
 #: app/forms.py:20
 msgid "Register"
-msgstr "注册"
+msgstr ""
 
 #: app/forms.py:25
 msgid "Please use a different username."
-msgstr "请用一个不同的用户名"
+msgstr ""
 
 #: app/forms.py:30
 msgid "Please use a different email address."
-msgstr "请用一个不同的电子邮箱地址"
+msgstr ""
 
 #: app/forms.py:34
 msgid "About me"
-msgstr "关于我"
+msgstr ""
 
 #: app/forms.py:35 app/forms.py:50
 msgid "Submit"
-msgstr "提交"
+msgstr ""
 
 #: app/forms.py:46
 msgid "Please use a different username"
-msgstr "请用一个不同的用户名"
+msgstr ""
 
 #: app/forms.py:49
 msgid "Say something"
-msgstr "说点什么"
+msgstr ""
 
 #: app/forms.py:54 app/forms.py:59
 msgid "Request Password Reset"
-msgstr "密码重置请求"
+msgstr ""
 
-#: app/routes.py:22
+#: app/routes.py:28
 msgid "Your post is now live!"
-msgstr "您的帖子现在已经上线了"
+msgstr ""
 
-#: app/routes.py:41
+#: app/routes.py:47
 msgid "Invalid username or password"
-msgstr "用户名或者密码不对"
+msgstr ""
 
-#: app/routes.py:70
+#: app/routes.py:76
 msgid "Congratulation, you are now a registered user!"
-msgstr "恭喜你! 你已经完成了注册"
+msgstr ""
 
-#: app/routes.py:102
+#: app/routes.py:108
 msgid "Your changes have been saved."
-msgstr "你的改动已经被保存"
+msgstr ""
 
-#: app/routes.py:120
+#: app/routes.py:126
 msgid "You cannot follow yourself!"
-msgstr "你不能关注你自己"
+msgstr ""
 
-#: app/routes.py:138
+#: app/routes.py:144
 msgid "You cannot unfollow yourself!"
-msgstr "你不能取消对你自己的关注"
+msgstr ""
 
-#: app/routes.py:164
+#: app/routes.py:170
 msgid "Check your email for the instructions to reset your password"
-msgstr "请根据电子邮件的指示重置密码"
+msgstr ""
 
-#: app/routes.py:179
+#: app/routes.py:185
 msgid "Your password has been reset."
-msgstr "你的密码已经被重置"
+msgstr ""
+
+#: app/translate.py:8
+msgid "Error: the translation service is not configured."
+msgstr "错误: 翻译服务没有配置好"
+
+#: app/translate.py:14
+msgid "Error: the translation service failed."
+msgstr "错误: 翻译服务失败"
 
 #: app/templates/404.html:4
 msgid "File Not Found"
-msgstr "对不起, 没有找到"
+msgstr ""
+
+#: app/templates/_post.html:23
+msgid "Translate"
+msgstr "翻译"
+
+#: app/templates/base.html:80
+msgid "Error: Could not contact server."
+msgstr "错误: 不能联系到服务器"
 

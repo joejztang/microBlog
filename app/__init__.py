@@ -61,6 +61,7 @@ bootstrap = Bootstrap(app)
 moment = Moment(app)
 babel = Babel(app)
 
+#because this decorator, the selected locale is stored as g.locale
 @babel.localeselector
 def get_locale():
 	return request.accept_languages.best_match(app.config['LANGUAGES'])

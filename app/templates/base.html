@@ -65,4 +65,22 @@ then any content defined for this block in the base template will be lost. -->
     {% else %}
         {{ moment.lang(g.locale) }}
     {% endif %}
+
+    <script>
+        // javascript promises, like callback function
+        function translate(sourceElem, destElem, sourceLang, destLang){
+            // console.log('I am in translate\n');
+            // console.log(String(destElem));
+            $(destElem).html('<img src="{{ url_for('static', filename='loading.gif') }}">');
+            $.post('/translate',{
+                text: $(sourceElem).text(),
+                source_language: sourceLang,
+                dest_language: destLang
+            }).done(function(response){
+                $(destElem).text(response['text'])
+            }).fail(function(){
+                $(destElem).text("{{ _('Error: Could not contact server.') }}")
+            });
+        }
+    </script>
 {% endblock %}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-04-04 16:37-0700\n"
+"POT-Creation-Date: 2018-04-05 10:47-0700\n"
 "PO-Revision-Date: 2018-04-04 16:27-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_TW\n"
@@ -74,39 +74,55 @@ msgstr "說點什麼"
 msgid "Request Password Reset"
 msgstr "請求重置密碼"
 
-#: app/routes.py:22
+#: app/routes.py:28
 msgid "Your post is now live!"
 msgstr "帖子已經上線"
 
-#: app/routes.py:41
+#: app/routes.py:47
 msgid "Invalid username or password"
 msgstr "無效的用戶名和密碼"
 
-#: app/routes.py:70
+#: app/routes.py:76
 msgid "Congratulation, you are now a registered user!"
 msgstr "恭喜你! 你已經註冊成功"
 
-#: app/routes.py:102
+#: app/routes.py:108
 msgid "Your changes have been saved."
 msgstr "變更已被保存"
 
-#: app/routes.py:120
+#: app/routes.py:126
 msgid "You cannot follow yourself!"
 msgstr "不能關注自己"
 
-#: app/routes.py:138
+#: app/routes.py:144
 msgid "You cannot unfollow yourself!"
 msgstr "不能取消對自己的關注"
 
-#: app/routes.py:164
+#: app/routes.py:170
 msgid "Check your email for the instructions to reset your password"
 msgstr "根據電郵指示重置密碼"
 
-#: app/routes.py:179
+#: app/routes.py:185
 msgid "Your password has been reset."
 msgstr "你的密碼已被重置"
+
+#: app/translate.py:8
+msgid "Error: the translation service is not configured."
+msgstr ""
+
+#: app/translate.py:14
+msgid "Error: the translation service failed."
+msgstr ""
 
 #: app/templates/404.html:4
 msgid "File Not Found"
 msgstr "沒有找到"
+
+#: app/templates/_post.html:23
+msgid "Translate"
+msgstr ""
+
+#: app/templates/base.html:80
+msgid "Error: Could not contact server."
+msgstr ""
 

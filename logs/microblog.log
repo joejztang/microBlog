@@ -10,3 +10,38 @@
 2018-04-04 16:46:08,354 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
 2018-04-04 16:46:32,261 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
 2018-04-04 16:47:00,230 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 09:56:16,890 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 09:56:39,397 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:43:18,532 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:44:20,585 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:44:36,914 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:47:34,490 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:47:51,523 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:48:22,553 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:26:03,366 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:26:20,275 ERROR: Exception on /translate [POST] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/jizhoutang/microBlog/app/routes.py", line 192, in translate_text
+    return jsonify({'text': translate(reqeust.form['text'],
+NameError: name 'reqeust' is not defined
+2018-04-05 11:27:31,177 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:37:57,049 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:39:54,358 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:41:57,290 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:43:12,496 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:43:59,506 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:44:51,511 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
