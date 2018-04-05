@@ -45,3 +45,4 @@ NameError: name 'reqeust' is not defined
 2018-04-05 11:43:12,496 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
 2018-04-05 11:43:59,506 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
 2018-04-05 11:44:51,511 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 12:54:52,195 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
