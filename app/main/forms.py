@@ -1,10 +1,9 @@
+from flask import request
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
-from wtforms.validators import DataRequired, Email, EqualTo, ValidationError, Length
+from wtforms import StringField, SubmitField, TextAreaField
+from wtforms.validators import ValidationError, DataRequired, Length
+from flask_babel import _, lazy_gettext as _l
 from app.models import User
-# find a way to delay the evaluation of the string until it is used
-from flask_babel import lazy_gettext as _l
-from flask_babel import _
 
 class EditProfileForm(FlaskForm):
 	username = StringField(_l('Username'), validators=[DataRequired()])
