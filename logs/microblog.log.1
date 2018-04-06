@@ -1,4 +1,25 @@
-2018-04-04 15:49:27,199 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+2018-04-04 16:26:48,863 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:27:46,050 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:37:35,282 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:37:53,844 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:38:16,571 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:39:17,703 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:40:58,036 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:44:53,823 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:45:15,234 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:46:08,354 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:46:32,261 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:47:00,230 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 09:56:16,890 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 09:56:39,397 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:43:18,532 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:44:20,585 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:44:36,914 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:47:34,490 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:47:51,523 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 10:48:22,553 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:26:03,366 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:26:20,275 ERROR: Exception on /translate [POST] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +35,36 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/jizhoutang/microBlog/app/routes.py", line 28, in index
-    return render_template('index.html', title='Home Page',form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "/Users/jizhoutang/microBlog/app/routes.py", line 192, in translate_text
+    return jsonify({'text': translate(reqeust.form['text'],
+NameError: name 'reqeust' is not defined
+2018-04-05 11:27:31,177 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:37:57,049 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:39:54,358 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:41:57,290 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:43:12,496 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:43:59,506 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 11:44:51,511 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-05 12:54:52,195 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-06 16:19:13,802 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:73]
+2018-04-06 16:19:18,473 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/jizhoutang/microBlog/app/main/routes.py", line 39, in index
+    return render_template('index.html', title=_('Home Page'),form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
     context, ctx.app)
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
@@ -38,88 +87,19 @@ Traceback (most recent call last):
     {%- block html %}
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 26, in block "body"
-    {% block scripts %}
-  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 61, in block "scripts"
-    {{ console.log(g.locale) }}
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'console' is undefined
-2018-04-04 15:53:15,070 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
-2018-04-04 15:54:02,973 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
-2018-04-04 15:54:11,073 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 31, in block "navbar"
+    <li><a href="{{ url_for('main.logout') }}">{{ _('Logout') }}</a></li>
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1805, in handle_url_build_error
     reraise(exc_type, exc_value, tb)
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
     raise value
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1610, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1831, in preprocess_request
-    rv = func()
-  File "/Users/jizhoutang/microBlog/app/routes.py", line 90, in before_request
-    g.locale = str(get_locale())
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_babel/__init__.py", line 261, in get_locale
-    locale = Locale.parse(rv)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/babel/core.py", line 268, in parse
-    parts = parse_locale(identifier, sep=sep)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/babel/core.py", line 1094, in parse_locale
-    raise ValueError('expected only letters, got %r' % lang)
-ValueError: expected only letters, got 'zh-cn'
-2018-04-04 15:57:07,493 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
-2018-04-04 16:02:51,279 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
-2018-04-04 16:02:53,949 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/jizhoutang/microBlog/app/routes.py", line 28, in index
-    return render_template('index.html', title='Home Page',form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
-    context, ctx.app)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
-    rv = template.render(context)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/jizhoutang/microBlog/app/templates/index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 26, in block "body"
-    {% block scripts %}
-  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 61, in block "scripts"
-    {% if eq(g.locale, 'zh_CN') %}
-jinja2.exceptions.UndefinedError: 'eq' is undefined
-2018-04-04 16:06:25,502 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
-2018-04-04 16:07:04,208 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
-2018-04-04 16:11:27,712 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
-2018-04-04 16:11:56,361 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
-2018-04-04 16:13:55,050 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
-2018-04-04 16:20:53,889 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.logout'. Did you mean 'auth.logout' instead?
+2018-04-06 16:21:03,292 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:73]
