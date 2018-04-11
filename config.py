@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-load_dotenv(os.path.join(basedir, '.env'))
+load_dotenv(os.path.join(basedir, 'my.env'))
 
 class Config(object):
 	# Flask-WTF extension uses this to protect web forms agains CSRF
@@ -23,3 +23,5 @@ class Config(object):
 	LANGUAGES=['en', 'zh_CN']
 
 	MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
+
+	ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')

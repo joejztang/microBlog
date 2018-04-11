@@ -1,5 +1,6 @@
 from app import create_app, db, cli
 from app.models import User, Post
+# from app.search import add_to_index, remove_from_index, query_index
 
 app = create_app()
 cli.register(app)
