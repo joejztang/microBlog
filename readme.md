@@ -1,36 +1,7 @@
 This project so far is an almost copy of The Flask Mega Tutorial
 
-### how to run
+deployed on heroku.com
 
-`export FLASK_APP=microBlog.py`
-
-`pip install -r requirement.txt`
-
-`flask run`
-
-### Modules used in this project
-
-* Flask-WTF
-
-* flask-sqlalchemy
-
-* flask-migrate
-
-* flask-login
-
-* flask-mail
-
-* pyjwt
-
-* flask-bootstrap
-
-* flask-moment
-
-* flask-babel
-
-* guess-language_spirit
-
-* python-dotenv
 
 ### known bugs
 
@@ -38,16 +9,8 @@ This project so far is an almost copy of The Flask Mega Tutorial
 
 		* because g.locale() returns 'zh_Hans_CN' instead of 'zh_CN', it brings a lot of trouble to the logic. Here I am not going to fix it, because it is just a educational project.
 
-### feature request
+	2. search function is not working.
+		* I didn't add elasticsearch on heroku, and no cofig var.
 
-	1. delete posts by user, and delete search index as well
-
-### how to enable text search
-
-`brew install elasticsearch`
-
-I used elasticsearch followed by tutorial
-
-`brew services start elasticsearch` or `elasticsearch` if don't want a background service.
-
-
+	3. email system is not working.
+		* I didn't set a var so far.
