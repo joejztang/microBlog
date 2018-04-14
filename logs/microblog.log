@@ -74,3 +74,7 @@ Traceback (most recent call last):
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 175, in perform_request
     raise ConnectionError('N/A', str(e), e)
 elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10930f2b0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10930f2b0>: Failed to establish a new connection: [Errno 61] Connection refused)
+2018-04-13 21:27:16,477 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:76]
+2018-04-13 21:28:48,438 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:76]
+2018-04-13 22:24:08,237 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:76]
+2018-04-13 22:30:42,921 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:76]

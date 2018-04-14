@@ -6,8 +6,12 @@
         	</a>
         </td>
         <td>
-        	<a href="{{ url_for('main.user', username=post.author.username) }}">{{ post.author.username }}
-        	</a>
+            <!-- When I get to call the popover() initialization function on the <span> elements I just created, the Bootstrap framework will dynamically insert the popup component for me. -->
+                <span class="user_popup">
+                	<a href="{{ url_for('main.user', username=post.author.username) }}">
+                        {{ post.author.username }}
+                	</a>
+                </span>
         	said {{ moment(post.timestamp).fromNow() }}:
             <br> <span id="post{{ post.id }}">{{ post.body }}</span>
         
