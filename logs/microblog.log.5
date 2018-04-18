@@ -1,4 +1,13 @@
-2018-04-01 15:37:37,866 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+2018-04-18 11:58:06,379 ERROR: Exception on /notifications [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.last_message_read_time
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,96 +17,56 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
     raise value
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/jizhoutang/microBlog/app/routes.py", line 22, in index
-    return render_template('index.html', title='Home Page',form=form, posts=posts)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
-    context, ctx.app)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
-    rv = template.render(context)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1610, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1831, in preprocess_request
+    rv = func()
+  File "/Users/jizhoutang/microBlog/app/main/routes.py", line 14, in before_request
+    if current_user.is_authenticated:
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "/Users/jizhoutang/microBlog/app/models.py", line 233, in load_user
+    return User.query.get(int(id))
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 882, in get
+    ident, loading.load_on_ident)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 916, in _get_impl
+    return fallback_fn(self, key)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/orm/loading.py", line 232, in load_on_ident
+    return q.one()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2848, in one
+    ret = self.one_or_none()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2818, in one_or_none
+    ret = list(self)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
     raise value.with_traceback(tb)
-  File "/Users/jizhoutang/microBlog/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 33, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/jizhoutang/microBlog/app/templates/index.html", line 18, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2018-04-01 15:40:20,773 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-04-01 15:58:03,431 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-04-01 16:21:03,391 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:55]
-2018-04-01 16:24:17,006 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:55]
-2018-04-03 11:26:09,124 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:55]
-2018-04-03 11:26:13,940 ERROR: Exception on /favicon.ico [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1590, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1573, in raise_routing_exception
-    raise request.routing_exception
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/ctx.py", line 294, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1512, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1471, in handle_http_exception
-    return handler(e)
-  File "/Users/jizhoutang/microBlog/app/errors.py", line 6, in not_found_error
-    return render_template('404.html'), 404
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 133, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/jizhoutang/microBlog/app/templates/404.html", line 1, in template
-    {% entends "base.html" %}
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 144, in parse_statement
-    self.fail_unknown_tag(token.value, token.lineno)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 97, in fail_unknown_tag
-    return self._fail_ut_eof(name, self._end_token_stack, lineno)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
-    self.fail(' '.join(message), lineno)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
-    raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'entends'.
-2018-04-03 11:26:55,050 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:55]
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.last_message_read_time [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen, user.last_message_read_time AS user_last_message_read_time \nFROM user \nWHERE user.id = ?'] [parameters: (1,)] (Background on this error at: http://sqlalche.me/e/e3q8)

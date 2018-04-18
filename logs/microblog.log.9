@@ -1,13 +1,4 @@
-2018-03-29 22:09:17,400 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 14:40:34,698 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 14:40:46,094 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 15:42:15,933 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 15:47:38,978 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 15:49:34,890 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 16:04:06,660 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-03-30 16:05:03,891 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-04-01 14:46:13,195 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-04-01 14:46:17,942 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+2018-04-04 15:49:27,199 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -23,85 +14,112 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/jizhoutang/microBlog/app/routes.py", line 21, in index
-    return render_template('index.html', title='Home Page',form=form, posts=posts)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 133, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/jizhoutang/microBlog/app/routes.py", line 28, in index
+    return render_template('index.html', title='Home Page',form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/jizhoutang/microBlog/app/templates/index.html", line 15, in template
-    <p>{{ form.submit() }</p>
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 213, in parse_if
-    'name:endif'))
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 875, in subparse
-    add_data(self.parse_tuple(with_condexpr=True))
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 620, in parse_tuple
-    args.append(parse())
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_expression
-    return self.parse_condexpr()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 437, in parse_condexpr
-    expr1 = self.parse_or()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
-    left = self.parse_and()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
-    left = self.parse_not()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
-    return self.parse_compare()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
-    expr = self.parse_math1()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
-    left = self.parse_concat()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
-    args = [self.parse_math2()]
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 517, in parse_math2
-    left = self.parse_pow()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 528, in parse_pow
-    left = self.parse_unary()
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 547, in parse_unary
-    node = self.parse_postfix(node)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 676, in parse_postfix
-    node = self.parse_call(node)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/parser.py", line 793, in parse_call
-    self.stream.expect('rparen')
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/lexer.py", line 388, in expect
-    next(self)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/lexer.py", line 359, in __next__
-    self.current = next(self._iter)
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/lexer.py", line 562, in wrap
-    for lineno, token, value in stream:
-  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/lexer.py", line 683, in tokeniter
-    filename)
-jinja2.exceptions.TemplateSyntaxError: unexpected '}'
-2018-04-01 14:49:04,268 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-04-01 14:51:54,369 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
-2018-04-01 15:37:34,244 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:53]
+  File "/Users/jizhoutang/microBlog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 26, in block "body"
+    {% block scripts %}
+  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 61, in block "scripts"
+    {{ console.log(g.locale) }}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'console' is undefined
+2018-04-04 15:53:15,070 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 15:54:02,973 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 15:54:11,073 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1610, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1831, in preprocess_request
+    rv = func()
+  File "/Users/jizhoutang/microBlog/app/routes.py", line 90, in before_request
+    g.locale = str(get_locale())
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_babel/__init__.py", line 261, in get_locale
+    locale = Locale.parse(rv)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/babel/core.py", line 268, in parse
+    parts = parse_locale(identifier, sep=sep)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/babel/core.py", line 1094, in parse_locale
+    raise ValueError('expected only letters, got %r' % lang)
+ValueError: expected only letters, got 'zh-cn'
+2018-04-04 15:57:07,493 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:02:51,279 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:02:53,949 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/jizhoutang/microBlog/app/routes.py", line 28, in index
+    return render_template('index.html', title='Home Page',form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/jizhoutang/microBlog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 26, in block "body"
+    {% block scripts %}
+  File "/Users/jizhoutang/microBlog/app/templates/base.html", line 61, in block "scripts"
+    {% if eq(g.locale, 'zh_CN') %}
+jinja2.exceptions.UndefinedError: 'eq' is undefined
+2018-04-04 16:06:25,502 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:07:04,208 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:11:27,712 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:11:56,361 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:13:55,050 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
+2018-04-04 16:20:53,889 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:58]
