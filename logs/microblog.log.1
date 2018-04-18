@@ -1,4 +1,4 @@
-2018-04-18 11:58:46,137 ERROR: Exception on /notifications [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+2018-04-18 11:59:02,390 ERROR: Exception on /index [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
     context)
@@ -70,4 +70,53 @@ Traceback (most recent call last):
   File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 507, in do_execute
     cursor.execute(statement, parameters)
 sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.last_message_read_time [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen, user.last_message_read_time AS user_last_message_read_time \nFROM user \nWHERE user.id = ?'] [parameters: (1,)] (Background on this error at: http://sqlalche.me/e/e3q8)
-2018-04-18 11:58:56,385 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 12:00:57,583 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 12:01:40,788 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 12:02:19,932 ERROR: Exception on /api/users/1 [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jizhoutang/microBlog/app/api/users.py", line 7, in get_user
+    return jsonify(User.query.get_or_404(id).todict())
+AttributeError: 'User' object has no attribute 'todict'
+2018-04-18 12:03:16,266 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 12:03:20,048 ERROR: Exception on /api/users/1 [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jizhoutang/microBlog/app/api/users.py", line 7, in get_user
+    return jsonify(User.query.get_or_404(id).to_dict())
+  File "/Users/jizhoutang/microBlog/app/models.py", line 138, in to_dict
+    'follower_count': self.followers().count(),
+TypeError: 'AppenderBaseQuery' object is not callable
+2018-04-18 12:07:45,263 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 14:16:31,803 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 14:31:14,792 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 14:37:03,354 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 14:47:34,813 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 15:06:25,165 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 15:19:35,198 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 15:19:49,998 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 15:46:24,800 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 15:59:18,571 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-18 16:06:19,540 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
