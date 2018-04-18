@@ -8,29 +8,9 @@ This project so far is an almost copy of The Flask Mega Tutorial
 
 `flask run`
 
-### Modules used in this project
+### how to run redis
 
-* Flask-WTF
-
-* flask-sqlalchemy
-
-* flask-migrate
-
-* flask-login
-
-* flask-mail
-
-* pyjwt
-
-* flask-bootstrap
-
-* flask-moment
-
-* flask-babel
-
-* guess-language_spirit
-
-* python-dotenv
+in one terminal run `redis-server`, in another one, run `rq worker`
 
 ### known bugs
 

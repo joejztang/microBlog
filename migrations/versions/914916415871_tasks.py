@@ -1,8 +1,8 @@
 """tasks
 
-Revision ID: 4111678438be
+Revision ID: 914916415871
 Revises: c31029ea0064
-Create Date: 2018-04-17 16:27:34.714546
+Create Date: 2018-04-17 22:39:21.497119
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '4111678438be'
+revision = '914916415871'
 down_revision = 'c31029ea0064'
 branch_labels = None
 depends_on = None
