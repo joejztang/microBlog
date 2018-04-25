@@ -12,7 +12,7 @@ from app.auth.email import send_password_reset_email
 def login():
 
 	if current_user.is_authenticated:
-		return redirect(url_for('index'))
+		return redirect(url_for('main.index'))
 
 	form = LoginForm()
 

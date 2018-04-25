@@ -1,1 +1,38 @@
 2018-04-18 16:12:25,616 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-25 11:55:39,129 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-25 11:55:57,602 ERROR: Exception on /search [GET] [in /Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/jizhoutang/microBlog/app/main/routes.py", line 126, in search
+    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
+  File "/Users/jizhoutang/microBlog/app/models.py", line 185, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/Users/jizhoutang/microBlog/app/search.py", line 23, in query_index
+    'from': (page-1)*per_page, 'size': per_page
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 655, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/elasticsearch/transport.py", line 314, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 180, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/jizhoutang/microBlog/microBlogEnv/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.NotFoundError: TransportError(404, 'index_not_found_exception', 'no such index')
+2018-04-25 12:03:35,657 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-25 14:33:54,943 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
+2018-04-25 15:44:01,904 INFO: Microblog startup [in /Users/jizhoutang/microBlog/app/__init__.py:83]
