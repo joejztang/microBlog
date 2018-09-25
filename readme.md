@@ -1,4 +1,4 @@
-This project is an almost copy of The Flask Mega Tutorial
+This project is inspired by **The Flask Mega Tutorial**
 
 ### how to enable text search
 
